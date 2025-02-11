@@ -1,7 +1,7 @@
 function getTotalBalanceByGender(users, gender) {
     return users
-        .filter(user => user.gender === gender)  // Cinsiyeti eşleşen kullanıcıları filtrele
-        .reduce((total, user) => total + user.balance, 0);  // Filtrelenen kullanıcıların bakiyelerini topla
+        .filter(user => user.gender === gender) 
+        .reduce((total, user) => total + user.balance, 0);  
 }
 
 
