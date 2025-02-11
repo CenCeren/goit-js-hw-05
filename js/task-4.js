@@ -1,13 +1,13 @@
-const getTotalBalanceByGender = (users, gender) => {
-    return users.reduce((total, user) => {
-      return user.gender === gender ? total + user.balance : total;
-    }, 0);
-  };
-
-  
+function getTotalBalanceByGender(users, gender) {
+    return users
+        .filter(user => user.gender === gender)  // Cinsiyeti eşleşen kullanıcıları filtrele
+        .reduce((total, user) => total + user.balance, 0);  // Filtrelenen kullanıcıların bakiyelerini topla
+}
 
 
-  const allUsers = [
+
+
+  const allusers = [
 	{
     name: "Moore Hensley",
     gender: "male",
@@ -45,6 +45,6 @@ const getTotalBalanceByGender = (users, gender) => {
   }
 ];
 
-console.log(getTotalBalanceByGender(allUsers, "male")); // 12053
+console.log(getTotalBalanceByGender(allusers, "male")); // 12053
 
-console.log(getTotalBalanceByGender(allUsers, "female")); // 8863
+console.log(getTotalBalanceByGender(allusers, "female")); // 8863
